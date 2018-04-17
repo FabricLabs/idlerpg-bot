@@ -1,0 +1,32 @@
+{
+  "name": "idlerpg-bot",
+  "version": "0.1.0",
+  "description": "Simple chatbot implementing IdleRPG, a pointless game rewarding users for inactivity.",
+  "main": "lib/bot.js",
+  "scripts": {
+    "start": "node bin/bot.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martindale/idlerpg-bot.git"
+  },
+  "keywords": [
+    "doorman",
+    "rpg",
+    "idlerpg",
+    "game",
+    "community",
+    "doorman-plugins"
+  ],
+  "author": "Eric Martindale",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martindale/idlerpg-bot/issues"
+  },
+  "homepage": "https://github.com/martindale/idlerpg-bot#readme",
+  "dependencies": {
+    "doorman": "FabricLabs/doorman#simple-start",
+    "level": "^3.0.0"
+  }
+}
