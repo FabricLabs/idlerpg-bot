@@ -1,6 +1,5 @@
 {
   "name": "idlerpg",
-  "plugins": ["idlerpg"],
   "services": ["matrix"],
   "matrix": {
     "token": "Find this in your user settings",

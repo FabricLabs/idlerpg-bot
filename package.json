@@ -12,12 +12,12 @@
     "url": "git+https://github.com/martindale/idlerpg-bot.git"
   },
   "keywords": [
-    "doorman",
-    "rpg",
     "idlerpg",
+    "rpg",
     "game",
-    "community",
-    "doorman-plugins"
+    "chat",
+    "chatbot",
+    "doorman"
   ],
   "author": "Eric Martindale",
   "license": "MIT",
