@@ -27,6 +27,7 @@
   "homepage": "https://github.com/martindale/idlerpg-bot#readme",
   "dependencies": {
     "doorman": "FabricLabs/doorman#simple-start",
+    "idlerpg": "martindale/idlerpg",
     "level": "^3.0.0"
   }
 }
