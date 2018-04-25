@@ -11,6 +11,8 @@
 		"token": "Get a token from: https://maki-dev.slack.com/apps/new/A0F7YS25R-bots"
   },
   "idlerpg": {
-    "channel": "idlerpg"
+    "channel": "idlerpg",
+    "interval": 600000,
+    "luck": 0.05
   }
 }
