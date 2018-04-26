@@ -1,6 +1,7 @@
 # idlerpg-bot
-Simple chatbot implementing IdleRPG, a pointless game rewarding users for
-inactivity.
+Simple chatbot implementing IdleRPG, a self-playing game which rewards users for
+inactivity.  This is the main bot code, which connects [`idlerpg`][idlerpg] with
+[the `doorman` chatbot framework][doorman].
 
 ## Quick Start
 Copy `config.json.sample` to `config.json` and change to suit your needs.
@@ -9,9 +10,13 @@ Configuration values include `services`, which can be configured to support any
 Doorman service — as of this writing, this includes `slack`, `matrix`, and
 `discord`.
 
-`interval` specifies the "tick" interval in milliseconds.
+### Options
+- `interval` specifies the "tick" interval in milliseconds (default: 60 seconds)
+- `luck` specifies the base encounter chance between 0 and 1 (default: 0.05)
 
 ## Support
 If you need help, please [open an issue][issues].
 
-[issues]: https://github.com/martindale/doorman-bot/issues/new
+[doorman]: https://github.com/FabricLabs/doorman
+[idlerpg]: https://github.com/FabricLabs/idlerpg
+[issues]: https://github.com/FabricLabs/idlerpg-bot/issues/new
