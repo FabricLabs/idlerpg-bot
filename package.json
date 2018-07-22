@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/martindale/idlerpg-bot.git"
+    "url": "git+https://github.com/FabricLabs/idlerpg-bot.git"
   },
   "keywords": [
     "idlerpg",
@@ -17,17 +17,19 @@
     "game",
     "chat",
     "chatbot",
-    "doorman"
+    "doorman",
+    "verse",
+    "fabric"
   ],
   "author": "Eric Martindale",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/martindale/idlerpg-bot/issues"
+    "url": "https://github.com/FabricLabs/idlerpg-bot/issues"
   },
-  "homepage": "https://github.com/martindale/idlerpg-bot#readme",
+  "homepage": "https://github.com/FabricLabs/idlerpg-bot#readme",
   "dependencies": {
-    "doorman": "FabricLabs/doorman#v0.1.0",
-    "idlerpg": "FabricLabs/idlerpg",
-    "level": "^3.0.0"
+    "doorman": "FabricLabs/doorman#f375d5322bc0b028301ebb633c55de98cb338fbf",
+    "idlerpg": "FabricLabs/idlerpg#79d60ca73efe450cbd860fdbd487903967b00513",
+    "level": "^3.0.1"
   }
 }

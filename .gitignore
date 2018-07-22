@@ -60,3 +60,6 @@ typings/
 # sensitive configuration
 config
 config.json
+
+# data folder
+data/idlerpg
