@@ -1,7 +1,7 @@
 {
   "name": "idlerpg-bot",
   "version": "0.1.0",
-  "description": "Simple chatbot implementing IdleRPG, a pointless game rewarding users for inactivity.",
+  "description": "Simple chatbot implementing IdleRPG, a self-playing game rewarding users for inactivity.",
   "main": "lib/bot.js",
   "scripts": {
     "start": "node bin/bot.js",
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/martindale/idlerpg-bot#readme",
   "dependencies": {
-    "doorman": "FabricLabs/doorman#simple-start",
+    "doorman": "FabricLabs/doorman#v0.1.0",
     "idlerpg": "FabricLabs/idlerpg",
     "level": "^3.0.0"
   }
