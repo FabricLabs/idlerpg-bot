@@ -5,7 +5,9 @@
   "main": "lib/bot.js",
   "scripts": {
     "start": "node bin/bot.js",
-    "test": "mocha"
+    "test": "mocha",
+    "docs": "npm run make:docs && http-server docs/",
+    "make:docs": "jsdoc lib README.md -d docs"
   },
   "repository": {
     "type": "git",
@@ -31,5 +33,9 @@
     "doorman": "FabricLabs/doorman#f375d5322bc0b028301ebb633c55de98cb338fbf",
     "idlerpg": "FabricLabs/idlerpg#79d60ca73efe450cbd860fdbd487903967b00513",
     "level": "^3.0.1"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "jsdoc": "^3.5.5"
   }
 }
