@@ -7,7 +7,7 @@
     "start": "node bin/bot.js",
     "test": "mocha",
     "docs": "npm run make:docs && http-server docs/",
-    "make:docs": "jsdoc lib README.md -d docs"
+    "make:docs": "jsdoc -c jsdoc.json lib README.md -d docs"
   },
   "repository": {
     "type": "git",
