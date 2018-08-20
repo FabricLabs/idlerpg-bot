@@ -1,13 +1,15 @@
 {
   "name": "idlerpg-bot",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple chatbot implementing IdleRPG, a self-playing game rewarding users for inactivity.",
   "main": "lib/bot.js",
   "scripts": {
+    "coverage": "istanbul cover _mocha -- --exit",
     "start": "node bin/bot.js",
-    "test": "mocha",
+    "test": "mocha --exit",
     "docs": "npm run make:docs && http-server docs/",
-    "make:docs": "jsdoc -c jsdoc.json lib README.md -d docs"
+    "make:docs": "jsdoc -c jsdoc.json lib README.md -d docs",
+    "review:coverage": "npm run coverage && http-server coverage/lcov-report"
   },
   "repository": {
     "type": "git",
@@ -30,12 +32,16 @@
   },
   "homepage": "https://github.com/FabricLabs/idlerpg-bot#readme",
   "dependencies": {
-    "doorman": "FabricLabs/doorman#f375d5322bc0b028301ebb633c55de98cb338fbf",
-    "idlerpg": "FabricLabs/idlerpg#79d60ca73efe450cbd860fdbd487903967b00513",
-    "level": "^3.0.1"
+    "doorman": "FabricLabs/doorman#a30ef48753a234328c6452e5c0a1721f79a116ce",
+    "idlerpg": "FabricLabs/idlerpg#66ebbe0a50fc7b019a3027d037964778b097dd58",
+    "level": "^3.0.2"
   },
   "devDependencies": {
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.2",
     "http-server": "^0.11.1",
-    "jsdoc": "^3.5.5"
+    "istanbul": "^1.1.0-alpha.1",
+    "jsdoc": "^3.5.5",
+    "mocha": "^5.2.0"
   }
 }
