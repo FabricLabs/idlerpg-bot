@@ -21,5 +21,18 @@ describe('Bot', function () {
       await bot.start();
       await body();
     });
+
+    it('should emit a "ready" event', function (done) {
+      let bot = new Bot({ debug: true });
+
+      bot.doorman.on('ready', async function () {
+        assert.ok(bot.doorman);
+        assert.ok(bot.doorman.plugins.idlerpg);
+        await bot.stop();
+        done();
+      });
+
+      bot.start();
+    });
   });
 });

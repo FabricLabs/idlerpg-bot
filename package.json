@@ -8,7 +8,8 @@
     "start": "node bin/bot.js",
     "test": "mocha --exit",
     "docs": "npm run make:docs && http-server docs/",
-    "make:docs": "jsdoc -c jsdoc.json lib README.md -d docs"
+    "make:docs": "jsdoc -c jsdoc.json lib README.md -d docs",
+    "review:coverage": "npm run coverage && http-server coverage/lcov-report"
   },
   "repository": {
     "type": "git",
