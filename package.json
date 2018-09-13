@@ -33,7 +33,7 @@
   "homepage": "https://github.com/FabricLabs/idlerpg-bot#readme",
   "dependencies": {
     "doorman": "FabricLabs/doorman#508e2f482fbf074bcd39f761fbf4c8a15e909918",
-    "idlerpg": "FabricLabs/idlerpg#b7c9f501535f0ef0951ba621122529b9baf78354",
+    "idlerpg": "FabricLabs/idlerpg#be062fc374046a39a329ebd720e4d8d452311347",
     "level": "^3.0.2"
   },
   "devDependencies": {
