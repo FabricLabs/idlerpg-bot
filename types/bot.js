@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Source: bot.js &middot; Documentation</title>
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
-  </head>
-  <body>
-    <div id="main">
-      <h1 class="page-title">Source: bot.js</h1>
-      
-
-
-
-    
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>'use strict';
+'use strict';
 
 // Reliable libraries
 const Event = require('events');
@@ -92,23 +69,3 @@ class Bot extends Event.EventEmitter {
 }
 
 module.exports = Bot;
-</code></pre>
-        </article>
-    </section>
-
-
-
-
-    </div>
-    <nav><h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Bot.html">Bot</a></li></ul></nav>
-    <br class="clear">
-    <footer>
-      <a href="https://github.com/FabricLabs/idlerpg-bot">git://</a>
-        
-          &middot; <a href="https://chat.fabric.pub/#/room/#bots:matrix.org">Community</a>
-        
-    </footer>
-    <script> prettyPrint(); </script>
-    <script src="scripts/linenumber.js"> </script>
-  </body>
-</html>
