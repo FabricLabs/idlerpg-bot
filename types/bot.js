@@ -22,7 +22,9 @@ class Bot extends Event.EventEmitter {
    */
   constructor (config = {}) {
     super(config);
-    this.config = Object.assign({}, config);
+    this.config = Object.assign({
+      path: 'stores/chat.roleplaygateway.com'
+    }, config);
     this.doorman = new Doorman(this.config);
     this.fabric = new Fabric();
   }
