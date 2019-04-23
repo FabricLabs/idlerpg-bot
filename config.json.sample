@@ -3,12 +3,12 @@
   "services": ["matrix"],
   "matrix": {
     "token": "Find this in your user settings",
-    "user": "@idlerpg:verse.im",
+    "user": "@idlerpg:roleplaygateway.com",
     "pass": "password for the above user",
-    "authority": "https://matrix.verse.im"
+    "authority": "https://chat.roleplaygateway.com"
   },
   "slack": {
-		"token": "Get a token from: https://maki-dev.slack.com/apps/new/A0F7YS25R-bots"
+    "token": "Get a token from: https://maki-dev.slack.com/apps/new/A0F7YS25R-bots"
   },
   "idlerpg": {
     "channel": "idlerpg",

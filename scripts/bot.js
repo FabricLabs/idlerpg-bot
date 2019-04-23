@@ -1,7 +1,7 @@
 'use strict';
 
 const config = require('../config');
-const Bot = require('../lib/bot');
+const Bot = require('../types/bot');
 
 function main () {
   let bot = new Bot(config);
