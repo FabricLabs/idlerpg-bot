@@ -4,9 +4,9 @@
   "description": "Simple chatbot implementing IdleRPG, a self-playing game rewarding users for inactivity.",
   "main": "lib/bot.js",
   "scripts": {
-    "coverage": "istanbul cover _mocha -- --exit",
+    "coverage": "npm test",
     "start": "node scripts/bot.js",
-    "test": "mocha --exit",
+    "test": "nyc mocha tests",
     "docs": "npm run make:docs && ecstatic docs/",
     "make:docs": "jsdoc -c jsdoc.json types README.md -d docs",
     "review:coverage": "npm run coverage && ecstatic coverage/lcov-report"
@@ -42,6 +42,7 @@
     "ecstatic": "^4.1.1",
     "istanbul": "^1.1.0-alpha.1",
     "jsdoc": "FabricLabs/jsdoc#fabric",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nyc": "^14.0.0"
   }
 }
