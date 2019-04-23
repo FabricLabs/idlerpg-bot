@@ -14,7 +14,7 @@
   <body>
     <div id="main">
       <h1 class="page-title">Source: bot.js</h1>
-      
+
 
 
 
@@ -45,7 +45,9 @@ class Bot extends Event.EventEmitter {
    */
   constructor (config = {}) {
     super(config);
-    this.config = Object.assign({}, config);
+    this.config = Object.assign({
+      path: 'stores/chat.roleplaygateway.com'
+    }, config);
     this.doorman = new Doorman(this.config);
     this.fabric = new Fabric();
   }
@@ -103,12 +105,11 @@ module.exports = Bot;
     <nav><h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Bot.html">Bot</a></li></ul></nav>
     <br class="clear">
     <footer>
-      <a href="https://github.com/FabricLabs/idlerpg-bot">git://</a>
-        
-          &middot; <a href="https://chat.fabric.pub/#/room/#bots:matrix.org">Community</a>
-        
+      <a href="https://github.com/FabricLabs/idlerpg-bot">git://</a> &middot; <a href="https://chat.fabric.pub/#/room/#bots:matrix.org">Community</a>
     </footer>
-    <script> prettyPrint(); </script>
-    <script src="scripts/linenumber.js"> </script>
+    <script>
+      prettyPrint();
+    </script>
+    <script src="scripts/linenumber.js"></script>
   </body>
 </html>
