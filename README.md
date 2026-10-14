@@ -8,15 +8,33 @@ inactivity.  This is the main bot code, which connects [`idlerpg`][idlerpg] with
 [the `doorman` chatbot framework][doorman].
 
 ## Quick Start
-Copy `config.json.sample` to `config.json` and change to suit your needs.
+Requires Node.js 24.15.0 (`.nvmrc`). Copy `settings/example.js` to
+`settings/local.js` (gitignored) and change to suit your needs, then:
 
-Configuration values include `services`, which can be configured to support any
-Doorman service — as of this writing, this includes `slack`, `matrix`, and
-`discord`.
+```bash
+npm i          # .npmrc sets allow-git=all for the Fabric git pins
+npm start      # scripts/bot.js → services/bot.js
+npm test
+```
 
-### Options
-- `interval` specifies the "tick" interval in milliseconds (default: 60 seconds)
-- `luck` specifies the base encounter chance between 0 and 1 (default: 0.05)
+`services` lists the Doorman adapters to enable — `matrix`, `discord`, `slack`,
+or `fabric` — each configured under its own key. `http` is `false` by default;
+set it to an object (for example `{ port: 4444 }`) to run Doorman's HTTP server.
+
+### `idlerpg` options
+- `path` — Fabric Store directory for game state (default `stores/idlerpg`)
+- `channels` — allowlist of channel names/ids whose presence counts (empty = all)
+- `interval` — tick interval in milliseconds (default: 10 minutes)
+- `luck` — base encounter chance between 0 and 1 (default: 0.05)
+
+### Local development against sibling checkouts
+`npm run link:doorman` and `npm run link:idlerpg` point `node_modules` at
+`../doorman` and `../idlerpg` (override with `FABRIC_DOORMAN` / `IDLERPG`).
+
+### Layout
+- `services/bot.js` — the bot: a Doorman host with `idlerpg/services/idlerpg` plugged in
+- `scripts/bot.js` — process entry point
+- `settings/example.js` — configuration template
 
 ## Support
 If you need help, please [open an issue][issues].

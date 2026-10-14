@@ -63,3 +63,7 @@ config.json
 
 # data folder
 data/idlerpg
+
+# Fabric stores and local settings
+stores/
+settings/local.js

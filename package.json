@@ -1,14 +1,21 @@
 {
   "name": "@rpg/idle",
-  "version": "0.1.3-dev",
+  "version": "0.2.0-dev",
   "description": "Simple chatbot implementing IdleRPG, a self-playing game rewarding users for inactivity.",
-  "main": "lib/bot.js",
+  "main": "services/bot.js",
+  "engines": {
+    "node": "24.15.0",
+    "npm": ">=12"
+  },
   "scripts": {
-    "coverage": "npm test",
+    "coverage": "c8 npm test",
     "start": "node scripts/bot.js",
-    "test": "nyc mocha tests",
+    "test": "mocha tests --exit",
     "docs": "npm run make:docs && ecstatic docs/",
-    "make:docs": "jsdoc -c jsdoc.json types README.md -d docs",
+    "make:docs": "jsdoc -c jsdoc.json services README.md -d docs",
+    "link:doorman": "node -e \"const fs=require('fs'),path=require('path');const target=process.env.FABRIC_DOORMAN||path.resolve(__dirname,'../doorman');const dest=path.join('node_modules','@fabric','doorman');fs.mkdirSync(path.dirname(dest),{recursive:true});fs.rmSync(dest,{recursive:true,force:true});fs.symlinkSync(target,dest,'dir');console.log('linked @fabric/doorman ->',target)\"",
+    "link:idlerpg": "node -e \"const fs=require('fs'),path=require('path');const target=process.env.IDLERPG||path.resolve(__dirname,'../idlerpg');const dest=path.join('node_modules','idlerpg');fs.mkdirSync(path.dirname(dest),{recursive:true});fs.rmSync(dest,{recursive:true,force:true});fs.symlinkSync(target,dest,'dir');console.log('linked idlerpg ->',target)\"",
+    "report:install": "rm -rf node_modules && mkdir -p reports && echo \"\n\" > package-lock.json && echo \"$ npm i\" > reports/install.log && npm i >> reports/install.log 2>&1",
     "review:coverage": "npm run coverage && ecstatic coverage/lcov-report"
   },
   "repository": {
@@ -32,17 +39,12 @@
   },
   "homepage": "https://github.com/FabricLabs/idlerpg-bot#readme",
   "dependencies": {
-    "doorman": "FabricLabs/doorman#508e2f482fbf074bcd39f761fbf4c8a15e909918",
-    "idlerpg": "FabricLabs/idlerpg#be062fc374046a39a329ebd720e4d8d452311347",
-    "level": "^3.0.2"
+    "@fabric/core": "FabricLabs/fabric#feature/rsi",
+    "@fabric/doorman": "FabricLabs/doorman#develop",
+    "idlerpg": "FabricLabs/idlerpg#master"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "coveralls": "^3.0.2",
-    "ecstatic": "^4.1.1",
-    "istanbul": "^1.1.0-alpha.1",
-    "jsdoc": "FabricLabs/jsdoc#fabric",
-    "mocha": "^5.2.0",
-    "nyc": "^14.0.0"
+    "c8": "10.1.3",
+    "mocha": "10.8.2"
   }
 }
