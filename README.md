@@ -8,7 +8,7 @@ inactivity.  This is the main bot code, which connects [`idlerpg`][idlerpg] with
 [the `doorman` chatbot framework][doorman].
 
 ## Quick Start
-Requires Node.js 24.15.0 (`.nvmrc`). Copy `settings/example.js` to
+Requires Node.js 26.12.1 (`.nvmrc`). Copy `settings/example.js` to
 `settings/local.js` (gitignored) and change to suit your needs, then:
 
 ```bash
