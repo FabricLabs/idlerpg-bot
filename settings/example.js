@@ -22,6 +22,9 @@ module.exports = {
   idlerpg: {
     path: 'stores/idlerpg',
     channels: ['idlerpg'], // only presence in these channels counts
+    // Fully qualified targets that receive every announcement instead of the
+    // presence channels, e.g. ['discord/channels/<text channel id>'].
+    announcements: [],
     interval: 600000,
     luck: 0.05
   }
