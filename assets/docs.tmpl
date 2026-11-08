@@ -14,17 +14,16 @@
   <body>
     <div id="main">
       <h1 class="page-title"><?js= title ?></h1>
-      <?js= content ?>
+<?js= content ?>
     </div>
     <nav><?js= this.nav ?></nav>
     <br class="clear">
     <footer>
-      <a href="<?js= env.conf.source ?>">git://</a>
-        <?js if (env.conf.chat) { ?>
-          &middot; <a href="<?js= env.conf.chat ?>">Community</a>
-        <?js } ?>
+      <a href="<?js= env.conf.source ?>">git://</a><?js if (env.conf.chat) { ?> &middot; <a href="<?js= env.conf.chat ?>">Community</a><?js } ?>
     </footer>
-    <script> prettyPrint(); </script>
-    <script src="scripts/linenumber.js"> </script>
+    <script>
+      prettyPrint();
+    </script>
+    <script src="scripts/linenumber.js"></script>
   </body>
 </html>
