@@ -4,19 +4,19 @@
   "description": "Simple chatbot implementing IdleRPG, a self-playing game rewarding users for inactivity.",
   "main": "services/bot.js",
   "engines": {
-    "node": "26.12.1",
+    "node": "26.13.0",
     "npm": ">=12"
   },
   "scripts": {
     "coverage": "c8 npm test",
     "start": "node scripts/bot.js",
     "test": "mocha tests --exit",
-    "docs": "npm run make:docs && ecstatic docs/",
-    "make:docs": "jsdoc -c jsdoc.json services README.md -d docs",
-    "link:doorman": "node -e \"const fs=require('fs'),path=require('path');const target=process.env.FABRIC_DOORMAN||path.resolve(__dirname,'../doorman');const dest=path.join('node_modules','@fabric','doorman');fs.mkdirSync(path.dirname(dest),{recursive:true});fs.rmSync(dest,{recursive:true,force:true});fs.symlinkSync(target,dest,'dir');console.log('linked @fabric/doorman ->',target)\"",
-    "link:idlerpg": "node -e \"const fs=require('fs'),path=require('path');const target=process.env.IDLERPG||path.resolve(__dirname,'../idlerpg');const dest=path.join('node_modules','idlerpg');fs.mkdirSync(path.dirname(dest),{recursive:true});fs.rmSync(dest,{recursive:true,force:true});fs.symlinkSync(target,dest,'dir');console.log('linked idlerpg ->',target)\"",
+    "docs": "npm run make:docs && npx --yes http-server docs/",
+    "make:docs": "npx --yes jsdoc -c jsdoc.json services README.md -d docs",
+    "link:doorman": "node -e \"const fs=require('fs'),path=require('path');const target=path.resolve(process.env.FABRIC_DOORMAN||path.join(__dirname,'../doorman'));const dest=path.join('node_modules','@fabric','doorman');fs.mkdirSync(path.dirname(dest),{recursive:true});fs.rmSync(dest,{recursive:true,force:true});fs.symlinkSync(target,dest,'dir');console.log('linked @fabric/doorman ->',target)\"",
+    "link:idlerpg": "node -e \"const fs=require('fs'),path=require('path');const target=path.resolve(process.env.IDLERPG||path.join(__dirname,'../idlerpg'));const dest=path.join('node_modules','idlerpg');fs.mkdirSync(path.dirname(dest),{recursive:true});fs.rmSync(dest,{recursive:true,force:true});fs.symlinkSync(target,dest,'dir');console.log('linked idlerpg ->',target)\"",
     "report:install": "rm -rf node_modules && mkdir -p reports && echo \"\n\" > package-lock.json && echo \"$ npm i\" > reports/install.log && npm i >> reports/install.log 2>&1",
-    "review:coverage": "npm run coverage && ecstatic coverage/lcov-report"
+    "review:coverage": "npm run coverage && npx --yes http-server coverage/lcov-report"
   },
   "repository": {
     "type": "git",

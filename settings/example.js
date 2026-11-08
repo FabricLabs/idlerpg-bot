@@ -21,7 +21,11 @@ module.exports = {
   },
   idlerpg: {
     path: 'stores/idlerpg',
-    channels: ['idlerpg'], // only presence in these channels counts
+    // Only presence in these channels counts; empty counts every channel the
+    // bot sees. Entries match a channel name or a fully qualified target, e.g.
+    // 'discord/channels/<id>' or 'matrix/channels/!room:server' (Matrix rooms
+    // have no names here, so a bare 'idlerpg' never matches one).
+    channels: [],
     // Fully qualified targets that receive every announcement instead of the
     // presence channels, e.g. ['discord/channels/<text channel id>'].
     announcements: [],

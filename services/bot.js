@@ -34,6 +34,14 @@ class Bot extends Service {
     this.doorman.on('error', (error) => this.emit('error', error));
     this.doorman.on('patch', (patch) => this.emit('patch', patch));
 
+    // Registered once: a stop and start must not plug in a second engine.
+    this.doorman.use(IdleRPG, this.settings.idlerpg);
+    // A failed save is an `error` on the game; a Doorman that doesn't forward
+    // plugin errors leaves it to us.
+    if (this.game && !this.game.listenerCount('error')) {
+      this.game.on('error', (...parts) => this.emit('error', ...parts));
+    }
+
     return this;
   }
 
@@ -47,7 +55,6 @@ class Bot extends Service {
 
   async start () {
     this.emit('log', '[IDLERPGBOT] starting...');
-    this.doorman.use(IdleRPG, this.settings.idlerpg);
     await this.doorman.start();
     this.emit('ready');
     return this;

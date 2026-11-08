@@ -27,7 +27,22 @@ describe('Bot', function () {
         await bot.stop();
         done();
       });
-      bot.start();
+      bot.start().catch(done);
+    });
+
+    it('plugs the game in once across a restart and reports its errors', async function () {
+      const bot = new Bot({ services: [], http: false, local: false, idlerpg: { persistent: false, autostart: false } });
+      const game = bot.game;
+      await bot.start();
+      await bot.stop();
+      await bot.start();
+      assert.strictEqual(bot.game, game);
+      const errors = [];
+      bot.on('error', (...parts) => errors.push(parts.join(' ')));
+      game.emit('error', 'save failed');
+      assert.strictEqual(errors.length, 1);
+      assert.ok(errors[0].includes('save failed'));
+      await bot.stop();
     });
 
     it('feeds adapter presence into the game and reports it', async function () {
